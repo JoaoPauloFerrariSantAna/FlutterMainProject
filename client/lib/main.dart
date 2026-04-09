@@ -1,3 +1,7 @@
+import 'package:client/constants/defaults/sized_box_default_height.dart';
+import 'package:client/screens/login_screen.dart';
+import 'package:client/screens/register_screen.dart';
+import 'package:client/widgets/change_screen_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,9 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("ProtoAlpha")
       ),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [ const Text("Hello world!") ]
+          children: [
+            const ChangeScreenButton(name: "Register", screenToChange: RegisterScreen()),
+            const SizedBox(height: sizedBoxDefaultHeight),
+            const ChangeScreenButton(name: "Login", screenToChange: LoginScreen())
+          ]
         )
       )
     );
